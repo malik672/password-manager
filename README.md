@@ -26,4 +26,5 @@ Lit protocol is used to encrypt stuff and set access control.<br/>
 <td><a href="https://docs.tableland.xyz/">Tableland</a></td>
 </tr>
 </tbody>
-</table>
+</table><br/>
+This is for the lit-protocol decentralized password manager bounty
