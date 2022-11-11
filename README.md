@@ -28,3 +28,16 @@ Lit protocol is used to encrypt stuff and set access control.<br/>
 </tbody>
 </table><br/>
 This is for the lit-protocol decentralized password manager bounty
+
+To setup client ( frontend + backend ):
+
+```bash
+cd client/
+npm install
+
+#or
+
+cd client/
+yarn install
+
+```
