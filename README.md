@@ -41,3 +41,8 @@ cd client/
 yarn install
 
 ```
+
+Errors
+you might know meet this error: Uncaught (in promise) HTTPError: basic auth failure: invalid project id or project secret<br/>
+This is because you need to add your own project id to the file auth: https://github.com/malik672/password-manager/blob/master/password-manager/api/auth.js<br/>
+Go here to create a project id: https://www.infura.io/product/ipfs
