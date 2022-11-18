@@ -1,11 +1,11 @@
 # passwordManager
 A Decentralized password manager that allows you to save password, only accesible to you and no one else.<br/>
 NOTE: To use you have to create a table.What are tables?, to learn more: https://docs.tableland.xyz/javascript-sdk<br/>
-All onchain activity is done on Polygon mumbai so its advisable to get maticon polygon mumbai, you can get it here: https://faucet.polygon.technology/<br/>
-Note: you will only pay one and thats to create a table, the rest of the times you go gasless.
+All onchain activity is done on Polygon mumbai so its advisable to get matic on polygon mumbai.You can get it here: https://faucet.polygon.technology/<br/>
+Note: you will only pay one and thats to create a table(a one time fee), the rest of the times you go gasless.
 Tableland is used for decentralized sql database.<br/>
 IPFS is used to store files and other data using web3.storage.<br/>
-Lit protocol is used to encrypt stuff and set access control.<br/>
+Lit protocol is used to encrypt files,strings,set access control and a lot of things.<br/>
 <table>
 <thead>
 <tr>
