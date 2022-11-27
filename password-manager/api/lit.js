@@ -33,6 +33,7 @@ export const Lit = async (fie, walletAddress, files) => {
     },
   ];
 
+  //save keys to node
   const encryptedSymmetricKey = await litNodeClient.saveEncryptionKey({
     accessControlConditions,
     symmetricKey,
@@ -40,6 +41,7 @@ export const Lit = async (fie, walletAddress, files) => {
     chain,
   });
 
+  //save encrypted file to ipfs
   const addeds = await ipfs.add(encryptedString);;
   const uris = `https://lenspads.infura-ipfs.io/ipfs/${addeds.path}`;
   const encryptedSymmetricKeys = LitJsSdk.uint8arrayToString(encryptedSymmetricKey, "base16");
@@ -49,29 +51,29 @@ export const Lit = async (fie, walletAddress, files) => {
     encryptedSymmetricKeys,
     accessControlConditions,
   }
-
+  
+  //save encrypted file data to ipfs
   const added = await ipfs.add(JSON.stringify(packagedData));
   const uri = `https://lenspads.infura-ipfs.io/ipfs/${added.path}`;
 
   return uri;
 };
 
-
+//decrypt string
 export async function decrypt(link) {  
   const client = new LitJsSdk.LitNodeClient();
   await client.connect();
-  console.log(client)
   const wins = typeof  window !== "undefined" ? window : "";
   const win = typeof  wins.litNodeClient !== "undefined" ? window : "";
-  console.log(win)
+  //fetch file containing from ipfs 
   const reds = await fetch(link);
   const red = await reds.json();
-  console.log(red)
-
+ 
   const chain = 'mumbai';
 
   const authSig = await LitJsSdk.checkAndSignAuthMessage({chain});
 
+ //get accessControlConditions from file
   const accessControlConditions = red.accessControlConditions;
 
   const links = red.uris;
@@ -80,6 +82,7 @@ export async function decrypt(link) {
 
   const bluee = await blues.blob();
 
+  //get encryption keys
   const symmetricKey = await client.getEncryptionKey({
     accessControlConditions,
     toDecrypt: r,
@@ -87,11 +90,11 @@ export async function decrypt(link) {
     authSig,
   });
 
+  //decrypt files and get username and password
   const decryptString = await LitJsSdk.decryptString(
     bluee,
     symmetricKey
   );
-
-  console.log(decryptString)
+  //returb decrypted string
   return decryptString;
 }
