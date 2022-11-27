@@ -1,5 +1,5 @@
-# passwordManager
-A Decentralized password manager that allows you to save password, only accesible to you and no one else.<br/>
+# Lit passwordManager
+A Decentralized password manager secured by lit protocol that allows you to save password, only accesible to you and no one else.<br/>
 NOTE: To use you have to create a table.What are tables?, to learn more: https://docs.tableland.xyz/javascript-sdk<br/>
 All onchain activity is done on Polygon mumbai so its advisable to get matic on polygon mumbai.You can get it here: https://faucet.polygon.technology/<br/>
 Note: you will only pay one and thats to create a table(a one time fee), the rest of the times you go gasless.
@@ -27,6 +27,10 @@ Lit protocol is used to encrypt files,strings,set access control and a lot of th
 </tr>
 </tbody>
 </table><br/>
+<div>
+ <h1>Rough Architecture</h1>
+ <img src="https://lucid.app/publicSegments/view/d064e876-9ef3-4b39-8b59-8550c6c1552a/image.png"/>
+</div>
 This is for the lit-protocol decentralized password manager bounty
 
 To setup client ( frontend + backend ):
