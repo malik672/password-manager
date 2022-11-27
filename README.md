@@ -2,7 +2,7 @@
 
 A Decentralized password manager secured by lit protocol that allows you to save password, only accessible to you and no one else
 
-##What is lit protocol
+## What is lit protocol
 from the docs: Lit Protocol is a decentralized key management network powered by threshold cryptography. A blockchain-agnostic middleware layer, Lit can be used to read and write data between blockchains and off-chain platforms, facilitating encryption, access control, and automation for the open web via programmatic signing.
 
 NOTE: To use you have to create a table.What are tables?, to learn more: https://docs.tableland.xyz/javascript-sdk , Why Tableland ? 
@@ -43,7 +43,7 @@ Note: you will only pay one and that's to create a table(a one time fee), the re
 ## Rough Architecture of the Lit Password manager
 <img src ="https://lucid.app/publicSegments/view/2b31f4c2-665d-413d-92d7-76a611e70398/image.png"/>
 
-###How it's built
+## How it's built
 Based on the architecture user details are encrypted and the details you get from the encryption which are the encrypted string and symmetric key are then
 ```
 const { encryptedString, symmetricKey } = await LitJsSdk.encryptString(file);
@@ -77,10 +77,10 @@ const encryptedSymmetricKey = await               litNodeClient.saveEncryptionKe
 user encrypted files are stored on ipfs and the hash we get from the ipfs file are stored inside of the Tableland, basically all tableland does is that it holds the ipfs hash to a key to value pairing i.e(key: look, value:ipfshash), the password is never decrypted until the user asks of them, basically your password is secured all the time(unless you share someone your private keys)
 
 ## Errors
-###Project Key
+## Project Key
 if you were to clone the repository might know meet this error: Uncaught (in promise) HTTPError: basic auth failure: invalid project id or project secret<br/>
 This is because you need to add your own project id to the file auth: https://github.com/malik672/password-manager/blob/master/password-manager/api/auth.js , or create an env file and add your details in it<br/>
 Go here to create a project id: https://www.infura.io/product/ipfs<br/>
 
-##Key error(Tableland)
+## Key error(Tableland)
 two details or credentials can't have the same key
